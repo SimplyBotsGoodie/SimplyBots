@@ -3,7 +3,7 @@
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
 action_endpoint:
-  url: "http://192.168.211.129:5055/webhook"
+  url: "https://rasa-server-3a7u4t4dxq-pd.a.run.app/webhook"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
@@ -14,9 +14,8 @@ action_endpoint:
 
 # CORS configuration
 cors:
-  allow_origins: 
-    - "https://renounding.github.io"
-    - "http://192.168.211.129:5005"
-  allow_methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"]
+  allow_origins:
+    - "https://rasa-server-3a7u4t4dxq-pd.a.run.app"
+  allow_methods: ["POST", "OPTIONS", "PUT", "DELETE"]
   allow_headers: ["Content-Type", "Authorization"]
   expose_headers: []
