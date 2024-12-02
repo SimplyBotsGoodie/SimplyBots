@@ -105,7 +105,7 @@ class ValidateContactForm(FormValidationAction):
     ) -> List[Text]:
         """A list of required slots that the form has to fill"""
         logger.debug("Extracting required slots")  # Add logging
-        return ["first_name", "last_name", "email"]
+        return ["first_name", "last_name", "email", "phone_number"]
 
     async def validate_first_name(
         self,
@@ -147,6 +147,24 @@ class ValidateContactForm(FormValidationAction):
             return {"email": None}
         return {"email": slot_value.lower()}
 
+    async def validate_phone_number(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate phone number input."""
+        phone_number = re.sub(r'\D', '', str(slot_value))
+        if len(phone_number) not in [10, 11]:
+            dispatcher.utter_message(text="Please provide a valid phone number (10 digits).")
+            return {"phone_number": None}
+        if len(phone_number) == 10:
+            formatted_phone = f"{phone_number[:3]}-{phone_number[3:6]}-{phone_number[6:]}"
+        else:
+            formatted_phone = f"{phone_number[0]}-{phone_number[1:4]}-{phone_number[4:7]}-{phone_number[7:]}"
+        return {"phone_number": formatted_phone}
+
 class ActionSubmitToHubSpot(Action):
     def name(self) -> Text:
         return "action_submit_to_hubspot"
@@ -161,6 +179,7 @@ class ActionSubmitToHubSpot(Action):
         first_name = tracker.get_slot("first_name")
         last_name = tracker.get_slot("last_name")
         email = tracker.get_slot("email")
+        phone_number = tracker.get_slot("phone_number")
         
         hubspot_api_key = os.getenv("HUBSPOT_API_KEY")
         logger.info(f"API key status: {'Present' if hubspot_api_key else 'Missing'}")
@@ -174,7 +193,8 @@ class ActionSubmitToHubSpot(Action):
             "properties": {
                 "firstname": first_name,
                 "lastname": last_name,
-                "email": email
+                "email": email,
+                "phone": phone_number
             }
         }
         headers = {
@@ -208,7 +228,7 @@ class ActionSubmitToHubSpot(Action):
             dispatcher.utter_message(
                 text="I'm having trouble with your request. Please contact us at +1 403 441 2059."
             )
-        return [SlotSet("first_name", None), SlotSet("last_name", None), SlotSet("email", None)]
+        return [SlotSet("first_name", None), SlotSet("last_name", None), SlotSet("email", None), SlotSet("phone_number", None)]
 
 class ActionProvidePDF(Action):
     def name(self):

@@ -136,6 +136,7 @@ nlu:
 
 - intent: request_contact
   examples: |
+    - yes
     - yes please contact me
     - I would like more information
     - yes I want to be contacted
@@ -1115,3 +1116,94 @@ nlu:
     - How do I plan a budget?
     - Can you tell me a funny story?
     - What’s your favorite way to relax?
+    
+- intent: ask_about_PC_Technician_Certificate
+  examples: |
+    - Can you tell me about the PC Technician program?
+    - What does the PC Technician course cover?
+    - How long is the PC Technician certification program?
+    - What skills will I gain from the PC Technician training?
+    - Are there job opportunities after the PC Technician course?
+    - What are the prerequisites for the PC Technician program?
+    - Is the PC Technician program hands-on?
+    - What certifications do I get after completing PC Technician?
+    - Does the PC Technician course include networking skills?
+    - How do I enroll in the PC Technician course?
+    
+- intent: ask_about_IT_Professional_Certificate
+  examples: |
+    - Can you explain the IT Professional Certificate program?
+    - What’s included in the IT Pro Certification course?
+    - Is the IT Professional Certificate suitable for beginners?
+    - What technologies are covered in the IT Professional Certificate?
+    - Are there any exams in the IT Professional Certificate?
+    - Can I take the IT Professional Certificate part-time?
+    - What’s the duration of the IT Professional Certificate?
+    - Is the IT Professional Certificate recognized in the industry?
+    - What kind of jobs can I get with the IT Professional Certificate?
+    - How much does the IT Professional Certificate cost?
+    
+- intent: ask_about_Cybersecurity_Specialist_Diploma
+  examples: |
+    - What is the Cybersecurity Specialist Diploma about?
+    - Does the Cybersecurity Diploma prepare for certifications like CISSP?
+    - What topics are covered in the Cybersecurity program?
+    - How long does the Cybersecurity Specialist Diploma take to complete?
+    - Are there hands-on labs in the Cybersecurity Diploma?
+    - Can I work in cybersecurity after completing this diploma?
+    - Does the Cybersecurity program cover ethical hacking?
+    - What qualifications do I need for the Cybersecurity Diploma?
+    - How much does the Cybersecurity program cost?
+    - Is the Cybersecurity Diploma online or in-person?
+    
+- intent: ask_about_Security_Analyst_Certificate
+  examples: |
+    - What’s included in the Security Analyst Certificate program?
+    - Is the Security Analyst Certificate focused on SOC roles?
+    - Does this cert include training in SIEM tools?
+    - How long does it take to complete the Security Analyst Certificate?
+    - What kind of jobs does the Security Analyst Certificate lead to?
+    - Are there exams in the Security Analyst Certificate?
+    - What prior knowledge do I need for the Security Analyst Cert?
+    - Does the Security Analyst program teach incident response?
+    - Is the Security Analyst Certificate course recognized by employers?
+    - How do I apply for the Security Analyst Certificate?
+    
+- intent: ask_about_Digital_Office_Certificate
+  examples: |
+    - What is the Digital Office Certificate about?
+    - What software is taught in the Digital Office Certificate program?
+    - How long is the Digital Office Certificate course?
+    - Can the Digital Office Cert help me get an admin job?
+    - What are the requirements for enrolling in the Digital Office Cert?
+    - Is the Digital Office Certificate recognized by employers?
+    - Does the course include advanced Microsoft Office training?
+    - What’s the cost of the Digital Office Certificate program?
+    - Are there any internships as part of the Digital Office Cert?
+    - How do I apply for the Digital Office Certificate course?
+  
+- intent: ask_about_Medical_Office_Assistant_Diploma
+  examples: |
+   What’s covered in the Medical Office Assistant Diploma?
+    - Can I work as a medical receptionist with this diploma?
+    - How long does it take to complete the Medical Office Assistant Diploma?
+    - What are the job prospects after the Medical Office Assistant course?
+    - Does the Medical Office Assistant program include billing and coding?
+    - Is the Medical Office Diploma recognized by clinics?
+    - Are there hands-on practice sessions in the Medical Office Assistant course?
+    - How much does the Medical Office Assistant Diploma cost?
+    - What are the prerequisites for the Medical Office Assistant Diploma?
+    - Can I take the Medical Office Assistant course online?
+    
+- intent: ask_about_Cloud_Engineering_Diploma
+  examples: |
+    - What is included in the Cloud Engineering Diploma?
+    - Does the Cloud Engineering Diploma teach AWS or Azure?
+    - How long does it take to complete the Cloud Engineering program?
+    - What certifications can I earn with the Cloud Engineering Diploma?
+    - What jobs can I get after completing the Cloud Engineering Diploma?
+    - Does this diploma cover Kubernetes and Docker?
+    - Are there any prerequisites for the Cloud Engineering program?
+    - Is the Cloud Engineering Diploma hands-on?
+    - How do I enroll in the Cloud Engineering Diploma program?
+    - What’s the cost of the Cloud Engineering Diploma course?

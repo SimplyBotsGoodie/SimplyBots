@@ -24,6 +24,7 @@ entities:
   - first_name
   - last_name
   - email
+  - phone_number
 
 slots:
   first_name:
@@ -62,12 +63,26 @@ slots:
         requested_slot: email
     initial_value: null
 
+  phone_number:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: phone_number
+    - type: from_text
+      conditions:
+      - active_loop: contact_form
+        requested_slot: phone_number
+    initial_value: null
+
 forms:
   contact_form:
     required_slots:
       - first_name
       - last_name
       - email
+      - phone_number
+
     ignored_intents:
       - bot_challenge
       - out_of_scope
@@ -92,6 +107,10 @@ responses:
   utter_ask_email:
     - text: "Finally, what's the best email address for the Advisor to reach you at?"
     - text: "What email address should we use to contact you?"
+
+  utter_ask_phone_number:
+    - text: "What's your phone number?"
+    - text: "Please provide your phone number for the advisor to reach you."
 
   utter_decline_contact:
     - text: "No problem! Feel free to come back if you have any questions in the future."
